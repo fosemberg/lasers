@@ -1,6 +1,6 @@
 import React from 'react';
 import {IParam} from "../../store/params";
-import Param from "./components/Param/Param";
+import Param from "./components/Param/container";
 import './Params.css';
 
 interface IParams {
