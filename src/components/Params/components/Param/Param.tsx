@@ -24,10 +24,17 @@ class Param extends React.PureComponent<IParam, IState> {
     return (
       <React.Fragment>
         <tr>
-          <td>{name}</td>
-          <td>{measureUnit}</td>
-          <td>{description}</td>
-          <td>{value}</td>
+          <td className='param'>
+            <div className='param_name'>
+            {name},{measureUnit}
+            </div>
+            <div className='param_description'>
+              {description}
+            </div>
+          </td>
+          <td className='param_value'>{value}</td>
+          <td/>
+          <td/>
           <td><FaPen/></td>
           <td>
             {

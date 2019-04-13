@@ -21,9 +21,9 @@ const Relation = ({relation, params}: IProps) => {
   return param
     ? <tr>
       <td/>
-      <td>{param.name}</td>
-      <td>{param.measureUnit}</td>
-      <td>{param.value}</td>
+      <td className='relation_name'>{param.name}, {param.measureUnit}</td>
+      <td/>
+      <td className='relation_value'> {param.value}</td>
       <td><FaPen/></td>
     </tr>
     : null

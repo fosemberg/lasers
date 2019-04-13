@@ -1,18 +1,19 @@
 import React from 'react';
 import {IParam} from "../../store/params";
 import Param from "./components/Param/Param";
+import './Params.css';
 
 interface IParams {
   params: IParam[];
 }
 
 const Params = ({params}: IParams) =>
-  <table>
+  <table className='params'>
     <thead>
-    <th>name</th>
-    <th>value</th>
-    <th>measureUnit</th>
-    <th>description</th>
+    <th>ПАРАМЕТР</th>
+    <th>ЗНАЧЕНИЕ</th>
+    <th>15 МИН.</th>
+    <th>24 Ч.</th>
     </thead>
     <tbody>
     {
