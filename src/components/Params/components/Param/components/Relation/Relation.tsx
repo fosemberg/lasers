@@ -13,22 +13,13 @@ interface IState {
   value: string;
 }
 
-const getParamByName = (name: string, params: IParam[]): IParam | null => {
-  for (const param of params) {
-    if (param.name === name) {
-      return param
-    }
-  }
-  return null
-}
-
 class Relation extends React.PureComponent<IProps, IState> {
   private readonly param: IParam | null;
 
   constructor(props: IProps) {
     super(props);
 
-    this.param = getParamByName(props.relation, props.params)
+    this.param = this.getParamByName(props.relation, props.params)
 
     this.state = {
       isEdit: false,
@@ -67,6 +58,15 @@ class Relation extends React.PureComponent<IProps, IState> {
         </td>
       </tr>
       : null
+  }
+
+  private getParamByName = (name: string, params: IParam[]): IParam | null => {
+    for (const param of params) {
+      if (param.name === name) {
+        return param
+      }
+    }
+    return null
   }
 
   private handleChange = (event: any) => {
