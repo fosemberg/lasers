@@ -1,4 +1,5 @@
 import React from 'react';
+import {FaAngleDown, FaPen} from "react-icons/fa";
 import {IParam} from "../../../../store/params";
 import Relation from "./components/Relation/container";
 
@@ -6,12 +7,13 @@ const Param = ({name, value, measureUnit, description, relations}: IParam) =>
   <React.Fragment>
     <tr>
       <td>{name}</td>
-      <td>{value}</td>
       <td>{measureUnit}</td>
       <td>{description}</td>
+      <td>{value}</td>
+      <td><FaPen/></td>
       <td>
         {
-          relations && '\/'
+          relations && <FaAngleDown/>
         }
       </td>
     </tr>

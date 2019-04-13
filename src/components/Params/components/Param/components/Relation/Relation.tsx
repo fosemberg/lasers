@@ -1,4 +1,5 @@
 import React from 'react';
+import {FaPen} from "react-icons/fa";
 import {IParam} from "../../../../../../store/params";
 
 interface IProps {
@@ -23,6 +24,7 @@ const Relation = ({relation, params}: IProps) => {
       <td>{param.name}</td>
       <td>{param.measureUnit}</td>
       <td>{param.value}</td>
+      <td><FaPen/></td>
     </tr>
     : null
 }
