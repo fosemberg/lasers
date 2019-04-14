@@ -1,11 +1,12 @@
 import {connect} from "react-redux";
-import {IState} from "../../store";
+import {IStoreState} from "../../store";
+import {synchronize} from "../../store/params";
 import ui from './Params';
 
 export default connect(
-  (state: IState) =>
+  (state: IStoreState) =>
     ({
       params: [...state.params]
     }),
-  null
+  { synchronize }
 )(ui)

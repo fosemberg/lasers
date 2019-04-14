@@ -5,10 +5,29 @@ import './Params.css';
 
 interface IParams {
   params: IParam[];
+  synchronize: () => void;
 }
 
-const Params = ({params}: IParams) =>
-  <table className='params'>
+class Params extends React.PureComponent<IParams, {}> {
+  private synchronizeInterval: any
+  constructor(props: IParams) {
+    super(props);
+  }
+
+  public componentDidMount(): void {
+    this.synchronizeInterval = setInterval(this.props.synchronize, 1000)
+  }
+
+  public componentWillUnmount(): void {
+    clearInterval(this.synchronizeInterval)
+  }
+
+  public render() {
+    const {
+      props: {params}
+    } = this
+
+    return <table className='params'>
     <thead>
     <th>ПАРАМЕТР</th>
     <th>ЗНАЧЕНИЕ</th>
@@ -23,5 +42,7 @@ const Params = ({params}: IParams) =>
     }
     </tbody>
   </table>
+  }
+}
 
 export default Params;

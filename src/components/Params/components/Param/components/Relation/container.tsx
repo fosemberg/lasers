@@ -1,17 +1,12 @@
 import {connect} from "react-redux";
-import {IState} from "../../../../../../store";
-import {saveParam} from "../../../../../../store/params/actions";
+import {IStoreState} from "../../../../../../store";
+import {saveParam} from "../../../../../../store/params";
 import ui from './Relation';
 
 export default connect(
-  (state: IState) =>
+  (state: IStoreState) =>
     ({
       params: [...state.params]
     }),
-  dispatch =>
-    ({
-      saveParam(name: string, value: string) {
-        dispatch(saveParam(name, value))
-      }
-    })
+  {saveParam}
 )(ui)

@@ -1,1 +1,2 @@
 export const SAVE_PARAM = "SAVE_PARAM"
+export const SYNCHRONIZE = "SYNCHRONIZE"

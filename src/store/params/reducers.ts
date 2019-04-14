@@ -1,4 +1,5 @@
 import {IAction} from "../../utils/redux";
+import {SYNCHRONIZE} from "./constants";
 import {SAVE_PARAM} from "./constants";
 import {IParam} from "./stateDeclaration";
 
@@ -22,6 +23,8 @@ export const params = (state = [], action: IAction) => {
       return state.map(
         c => param(c, action)
       )
+    case SYNCHRONIZE:
+      return action.payload.json.params
     default:
       return state
   }

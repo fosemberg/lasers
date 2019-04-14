@@ -24,6 +24,14 @@ class Param extends React.PureComponent<IProps, IState> {
     };
   }
 
+  public componentWillReceiveProps(nextProps: Readonly<IProps>, nextContext: any): void {
+    if (this.props.value !== nextProps.value) {
+      this.setState({
+        value: nextProps.value
+      })
+    }
+  }
+
   public render() {
     const {
       state: {isOpen, isEdit, value},
