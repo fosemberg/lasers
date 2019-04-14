@@ -1,8 +1,9 @@
 import {combineReducers, createStore} from 'redux'
-import stateData from './data/params14.json'
 import {ILed, leds} from './leds'
 import {IParam, params} from './params'
 import {IPort, ports} from './ports'
+
+const stateUrl = 'https://raw.githubusercontent.com/fosemberg/lasers/gh-pages/params14.json'
 
 export interface IState {
   params: IParam[],
@@ -10,7 +11,7 @@ export interface IState {
   ports: IPort[],
 }
 
-const storeFactory = (initialState: IState = stateData) =>
+const storeFactory = (initialState: IState) =>
   createStore(
     combineReducers({leds, params, ports}),
     false && (localStorage['redux-store']) ?
@@ -19,4 +20,9 @@ const storeFactory = (initialState: IState = stateData) =>
     (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
   )
 
-export default storeFactory
+const getStore = () =>
+  fetch(stateUrl)
+    .then(res => res.json())
+    .then((json) => storeFactory(json))
+
+export default getStore
