@@ -28,11 +28,11 @@ class Params extends React.PureComponent<IParams, {}> {
     } = this
 
     return <table className='params'>
-    <thead>
-    <th className='th_main'>ПАРАМЕТР</th>
-    <th className='th_value'>ЗНАЧЕНИЕ</th>
-    <th className='th_minutes'>15 МИН.</th>
-    <th className='th_hours'>24 Ч.</th>
+    <thead className='params__header'>
+    <th className='params__header_main'>ПАРАМЕТР</th>
+    <th className='params__header_value'>ЗНАЧЕНИЕ</th>
+    <th className='params__header_minutes'>15 МИН.</th>
+    <th className='params__header_hours'>24 Ч.</th>
     <th/>
     <th/>
     </thead>

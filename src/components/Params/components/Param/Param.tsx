@@ -53,7 +53,7 @@ class Param extends React.PureComponent<IProps, IState> {
             {
               isEdit
                 ? <input {...{value}} onChange={this.handleChange}/>
-                : <span>{value}</span>
+                : <div>{value}</div>
             }
 
           </td>
