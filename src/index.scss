@@ -2,8 +2,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #fff;
-  color: #000;
 }
 
 tr {
@@ -52,7 +50,7 @@ input {
 
 tr, thead {
   display: grid;
-  grid-template-columns: 3fr 3fr 1fr 1fr 0fr 0fr;
+  grid-template-columns: 3fr 3fr 1fr 1fr 40px 40px;
 }
 
 thead {
@@ -120,4 +118,12 @@ td.relation_name {
 
 th.th_value {
   text-align: center;
+}
+
+.relation_icon {
+  color: #a9a6a6;
+}
+
+thead {
+  color: #898989;
 }

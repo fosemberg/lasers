@@ -2,6 +2,7 @@ import React from 'react';
 import {FaAngleDown, FaAngleUp, FaPen, FaSave} from "react-icons/fa";
 import {IParam} from "../../../../store/params";
 import Relation from "./components/Relation/container";
+import './Param.css'
 
 interface IState {
   isOpen: boolean;
@@ -58,7 +59,7 @@ class Param extends React.PureComponent<IProps, IState> {
           </td>
           <td/>
           <td/>
-          <td>
+          <td className='param_icon'>
             {
               isEdit
                 ? <span onClick={this.saveParam}>
@@ -69,7 +70,7 @@ class Param extends React.PureComponent<IProps, IState> {
                 </span>
             }
           </td>
-          <td>
+          <td className='param_icon'>
             {
               relations &&
               <span onClick={this.toggleOpen}>

@@ -1,6 +1,7 @@
-import React from 'react';
-import {FaPen, FaSave} from "react-icons/fa";
-import {IParam} from "../../../../../../store/params";
+import React from 'react'
+import {FaPen, FaSave} from "react-icons/fa"
+import {IParam} from "../../../../../../store/params"
+import './Relation.css'
 
 interface IProps {
   relation: string;
@@ -56,7 +57,7 @@ class Relation extends React.PureComponent<IProps, IState> {
               : <span>{value}</span>
           }
         </td>
-        <td>
+        <td className='relation_icon'>
           {
             isEdit
               ? <span onClick={this.saveParam}>
@@ -67,7 +68,7 @@ class Relation extends React.PureComponent<IProps, IState> {
                 </span>
           }
         </td>
-        <td/>
+        <td className='relation_icon'/>
       </tr>
       : null
   }
