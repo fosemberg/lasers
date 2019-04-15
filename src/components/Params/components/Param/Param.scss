@@ -1,13 +1,17 @@
 .param {
   &_name {
-
+    font-weight: bold;
   }
 
   &_value {
-
+    text-align: center;
+    input {
+      background-color: rgb(239,240,237);
+    }
   }
 
   &_description {
-
+    color: rgb(137,137,137);
+    font-size: 12px;
   }
 }

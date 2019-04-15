@@ -6,10 +6,6 @@ body {
   color: #000;
 }
 
-.param_description {
-  color: rgb(137,137,137);
-}
-
 tr {
   border-bottom: solid 1px;
   border-color: rgb(239,240,237);
@@ -25,10 +21,6 @@ thead {
   font-size: 10px;
 }
 
-.param_description {
-  font-size: 12px;
-}
-
 body {
   font-size: 14px;
 }
@@ -37,18 +29,9 @@ td,th {
   padding: 12px;
 }
 
-table.params {
-  display: flex;
-  flex-direction: column;
-}
-
 tbody {
   height: calc(100vh - 40px);
   overflow: auto;
-}
-
-.param_name {
-  font-weight: bold;
 }
 
 .params tr:hover {
@@ -111,7 +94,9 @@ td.relation_value span {
 
 span {
   margin: auto;
-}td.relation_value {
+}
+
+td.relation_value {
   padding: 12px;
 }
 
@@ -129,18 +114,10 @@ td.relation_value span {
   margin: 8px 4px;
 }
 
-td.param_value {
-  text-align: center;
-}
-
 td.relation_name {
   text-align: center;
 }
 
 th.th_value {
   text-align: center;
-}
-
-td.param_value input {
-  background-color: rgb(239,240,237);
 }
