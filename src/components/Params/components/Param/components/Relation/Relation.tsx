@@ -45,7 +45,7 @@ class Relation extends React.PureComponent<IProps, IState> {
     } = this
 
     return param
-      ? <tr>
+      ? <tr className='relation'>
         <td/>
         <td className='relation_name'>{param.name}, {param.measureUnit}</td>
         <td/>
@@ -53,7 +53,7 @@ class Relation extends React.PureComponent<IProps, IState> {
           {
             isEdit
               ? <input {...{value}} onChange={this.handleChange}/>
-              : value
+              : <span>{value}</span>
           }
         </td>
         <td>
@@ -67,6 +67,7 @@ class Relation extends React.PureComponent<IProps, IState> {
                 </span>
           }
         </td>
+        <td/>
       </tr>
       : null
   }

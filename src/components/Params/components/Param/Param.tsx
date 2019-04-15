@@ -39,8 +39,8 @@ class Param extends React.PureComponent<IProps, IState> {
     } = this
     return (
       <React.Fragment>
-        <tr>
-          <td className='param'>
+        <tr className='param'>
+          <td className='param_main'>
             <div className='param_name'>
               {name},{measureUnit}
             </div>
@@ -52,7 +52,7 @@ class Param extends React.PureComponent<IProps, IState> {
             {
               isEdit
                 ? <input {...{value}} onChange={this.handleChange}/>
-                : value
+                : <span>{value}</span>
             }
 
           </td>
