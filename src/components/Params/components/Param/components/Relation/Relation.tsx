@@ -27,6 +27,17 @@ class Relation extends React.PureComponent<IProps, IState> {
     };
   }
 
+  public componentWillReceiveProps(nextProps: Readonly<IProps>, nextContext: any): void {
+    const {props} = this
+    const param = this.getParamByName(props.relation, props.params)
+    const nextParam = this.getParamByName(nextProps.relation, nextProps.params)
+    if ((param && param.value) !== (nextParam && nextParam.value)) {
+      this.setState({
+        value: nextParam ? nextParam.value : ''
+      })
+    }
+  }
+
   public render() {
     const {
       state: {isEdit, value},
