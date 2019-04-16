@@ -1,6 +1,9 @@
 .param {
   > * {
     padding: 12px;
+    @media (max-width: 380px) {
+      padding: 4px;
+    }
   }
 
   &_name {

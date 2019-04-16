@@ -20,6 +20,9 @@
 
     > * {
       padding: 12px;
+      @media (max-width: 380px) {
+        padding: 4px;
+      }
     }
   }
 
@@ -48,13 +51,19 @@
 
   tr, &__header {
     display: grid;
-    grid-template-columns: minmax(100px, 3fr) minmax(100px, 3fr) minmax(10px, 1fr) minmax(30px, 1fr) minmax(20px, 1fr) minmax(20px, 1fr);
+    grid-template-columns: minmax(60px,3fr) minmax(60px,3fr) minmax(30px,1fr) minmax(30px,1fr) minmax(30px,1fr) minmax(30px,1fr);
     > *:first-child {
       padding-left: 24px;
+      @media (max-width: 380px) {
+        padding-left: 8px;
+      }
     }
 
     > *:last-child {
       padding-right: 24px;
+      @media (max-width: 380px) {
+        padding-right: 8px;
+      }
     }
   }
 }
