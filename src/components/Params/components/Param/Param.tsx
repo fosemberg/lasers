@@ -43,7 +43,7 @@ class Param extends React.PureComponent<IProps, IState> {
         <tr className='param'>
           <td className='param_main'>
             <div className='param_name'>
-              {name},{measureUnit}
+              {name}, {measureUnit}
             </div>
             <div className='param_description'>
               {description}
