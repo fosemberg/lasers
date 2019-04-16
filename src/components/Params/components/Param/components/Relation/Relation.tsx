@@ -1,5 +1,5 @@
 import React from 'react'
-import {FaPen, FaSave} from "react-icons/fa"
+import {FaPen} from "react-icons/fa"
 import {IParam} from "../../../../../../store/params"
 import './Relation.css'
 
@@ -44,7 +44,6 @@ class Relation extends React.PureComponent<IProps, IState> {
       state: {isEdit, value},
       param,
     } = this
-
     return param
       ? <tr className='relation'>
         <td/>
@@ -57,18 +56,13 @@ class Relation extends React.PureComponent<IProps, IState> {
               : <div>{value}</div>
           }
         </td>
-        <td className='relation_icon'>
-          {
-            isEdit
-              ? <span onClick={this.saveParam}>
-                  <FaSave/>
-                </span>
-              : <span onClick={this.setEditOn}>
-                  <FaPen/>
-                </span>
-          }
+        <td
+          className={`button_icon ${isEdit ? ' button_icon_active' : ''}`}
+          onClick={this.onClickEditButton}
+        >
+          <FaPen/>
         </td>
-        <td className='relation_icon'/>
+        <td className='button_icon'/>
       </tr>
       : null
   }
@@ -86,6 +80,10 @@ class Relation extends React.PureComponent<IProps, IState> {
     this.setState({
       value: event.target.value
     });
+  }
+
+  private onClickEditButton = () => {
+    this.state.isEdit ? this.saveParam() : this.setEditOn()
   }
 
   private saveParam = () => {

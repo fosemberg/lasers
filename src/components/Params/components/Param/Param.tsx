@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaAngleDown, FaAngleUp, FaPen, FaSave} from "react-icons/fa";
+import {FaAngleDown, FaAngleUp, FaPen} from "react-icons/fa";
 import {IParam} from "../../../../store/params";
 import Relation from "./components/Relation/container";
 import './Param.css'
@@ -10,7 +10,7 @@ interface IState {
   value: string;
 }
 
-interface IProps extends IParam{
+interface IProps extends IParam {
   saveParam: (name: string, value: string) => void;
 }
 
@@ -55,37 +55,33 @@ class Param extends React.PureComponent<IProps, IState> {
                 ? <input {...{value}} onChange={this.handleChange}/>
                 : <div>{value}</div>
             }
-
           </td>
           <td/>
           <td/>
-          <td className='param_icon'>
-            {
-              isEdit
-                ? <span onClick={this.saveParam}>
-                  <FaSave/>
-                </span>
-                : <span onClick={this.setEditOn}>
-                  <FaPen/>
-                </span>
-            }
+          <td
+            className={`button_icon ${isEdit ? ' button_icon_active' : ''}`}
+            onClick={this.onClickEditButton}
+          >
+            <FaPen/>
           </td>
-          <td className='param_icon'>
-            {
-              relations &&
-              <span onClick={this.toggleOpen}>
-                {
-                  isOpen
-                    ? <FaAngleUp/>
-                    : <FaAngleDown/>
-                }
-              </span>
-            }
-          </td>
+          {
+            relations
+              ? <td
+                className={`button_icon ${isOpen ? ' button_icon_active' : ''}`}
+                onClick={this.toggleOpen}
+              >
+                {isOpen ? <FaAngleUp/> : <FaAngleDown/>}
+              </td>
+              : <td/>
+          }
         </tr>
         {
           relations && isOpen &&
-          relations.map((relation, key) => <Relation {...{key, relation}}/>)
+          <div className='relations'>
+            {
+              relations.map((relation, key) => <Relation {...{key, relation}}/>)
+            }
+          </div>
         }
       </React.Fragment>
     );
@@ -95,6 +91,10 @@ class Param extends React.PureComponent<IProps, IState> {
     this.setState({
       value: event.target.value
     });
+  }
+
+  private onClickEditButton = () => {
+    this.state.isEdit ? this.saveParam() : this.setEditOn()
   }
 
   private saveParam = () => {
