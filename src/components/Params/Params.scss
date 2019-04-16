@@ -48,9 +48,10 @@
     }
   }
 
-  tr, &__header {
+  tr {
     display: grid;
     grid-template-columns: minmax(60px, 3fr) minmax(60px, 3fr) minmax(30px, 1fr) minmax(30px, 1fr) minmax(30px, 1fr) minmax(30px, 1fr);
+    width: 100%;
 
     > *:first-child {
       padding-left: 24px;

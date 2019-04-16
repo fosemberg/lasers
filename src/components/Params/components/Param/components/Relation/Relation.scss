@@ -3,6 +3,14 @@
   padding-top: 4px;
   padding-bottom: 4px;
 
+  &_wrapper {
+    height: 12px;
+    background-color: rgb(239, 240, 237);
+    &:hover {
+      background-color: rgb(239, 240, 237) !important;
+    }
+  }
+
   &:first-child {
     padding-top: 12px;
   }

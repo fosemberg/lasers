@@ -77,11 +77,11 @@ class Param extends React.PureComponent<IProps, IState> {
         </tr>
         {
           relations && isOpen &&
-          <div className='relations'>
-            {
-              relations.map((relation, key) => <Relation {...{key, relation}}/>)
-            }
-          </div>
+          <React.Fragment>
+            <tr className='relation_wrapper'/>
+            { relations.map((relation, key) => <Relation {...{key, relation}}/>) }
+            <tr className='relation_wrapper'/>
+          </React.Fragment>
         }
       </React.Fragment>
     );
